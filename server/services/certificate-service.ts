@@ -72,6 +72,8 @@ export class CertificateService{
         await this.sendNotification(id, active)
         return
     }
+
+    
     private async sendNotification(certificateId: string, active: boolean){
         const customer = await this.postgres.query(`select ic.id,name, email from identity.customer ic
         join ledger.certificate lc

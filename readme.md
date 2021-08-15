@@ -38,7 +38,8 @@ HTTP-based RESTful API for managing Customers and their Certificates.
 
 ## Installation
 
-> Caution: Update WEBHOOK_URL in .env to receive activation/deactivation notifications. 
+> Caution: </br>Update WEBHOOK_URL in .env to receive activation/deactivation notifications. </br></br>
+> Port 9008 is assumed to be available. If its not, update it in the app.ts file. 
 
 Pre-requisites: [Node.js](https://nodejs.org/) v12+, docker >=20.10.0, npm >= 6.14.8
 
@@ -86,8 +87,8 @@ npm run run-app
     }
 ##### Example (200): 
 > </br><b>Request:</b> </br> 
-    curl http://localhost:9008/customer/7193f400-7f01-4d40-b30d-f67207860d33 </br>
-    <b>Response: </b>  </br></br>
+    curl http://localhost:9008/customer/7193f400-7f01-4d40-b30d-f67207860d33 </br></br>
+    <b>Response: </b>  </br>
     ```{status:200, data:[{"id":"7193f400-7f01-4d40-b30d-f67207860d33", name:"test-user", email: "testing@test.com"}]}```</br></br>
 
 ##### Example (404): 
@@ -106,7 +107,7 @@ npm run run-app
 > </br><b>Request:</b> </br> 
     curl http://localhost:9008/customer </br></br>
     <b>Response:</b> </br>
-    ```{"status":200,"data":[{"id":"7193f400-7f01-4d40-b30d-f67207860d33","name":"test-user","email":"testing@test.com","password":"sha1$2d9ffcce$1$5c4e3e1633447ba0d049dbedcb30f6f73b00218c"}]}```</br></br>
+    ```{"status":200,"data":[{"id":"7193f400-7f01-4d40-b30d-f67207860d33","name":"test-user","email":"testing@test.com"}]}```</br></br>
     
 #### <u><b> Delete existing Customer </b></u>
     - DELETE: ${baseUrl}/customer/:id
@@ -148,7 +149,7 @@ npm run run-app
 > </br><b>Request:</b> </br> </br>
     curl --header "Content-Type: application/json" -d "{\"customerId\":\"non-existent\", \"active\": false, \"domainName\":\"www.test.com\"}" http://localhost:9008/certificate </br> </br>
     <b>Response:</b> </br></br>
-    ```{"status":404,"error":"customer with id: undefined does not exist"}```
+    ```{"status":404,"error":"customer with id: non-existent does not exist"}```
     </br></br>
 
 ##### Example (400): 

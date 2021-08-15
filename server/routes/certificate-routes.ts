@@ -44,7 +44,7 @@ certificateRouter.patch('/certificate/:id', async(ctx: Koa.Context)=>{
     const body = ctx.request.body
     if(body.active===undefined){
         ctx.body = {
-            status: 403, 
+            status: 400, 
             error: 'malformed request. Please provide active field in the body'
         }
         return
@@ -77,9 +77,9 @@ certificateRouter.post('/certificate', async(ctx: Koa.Context)=>{
     const body = ctx.request.body
     console.log('body', !body.customerId, body.active, !body.domainName)
     if(!body.customerId || body.active===undefined || !body.domainName){
-        ctx.status = 403
+        ctx.status = 400
         ctx.body = {
-            status: 403,
+            status: 400,
             error: 'malformed request. Please provide customer id, active and domainName field'
         } 
     }else{
@@ -88,7 +88,7 @@ certificateRouter.post('/certificate', async(ctx: Koa.Context)=>{
             if(!customer){
                 ctx.body = {
                     status: 404, 
-                    error: `customer with id: ${ctx.params.customerId} does not exist`
+                    error: `customer with id: ${body.customerId} does not exist`
                 }
                 return
             }

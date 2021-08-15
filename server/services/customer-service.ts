@@ -16,7 +16,14 @@ export class CustomerService{
 
     async deleteCustomer(id: string){
         const query = 'delete from identity.customer where id=$1'
+        await this.deleteCustomerCertificates(id)
         await this.postgres.query(query, [id])
+        return
+    }
+
+    private async deleteCustomerCertificates(customerId: string){
+        const query = 'delete from ledger.certificate where customer_id=$1'
+        await this.postgres.query(query, [customerId])
         return
     }
 
