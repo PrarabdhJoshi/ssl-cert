@@ -37,7 +37,7 @@ HTTP-based RESTful API for managing Customers and their Certificates.
 - password-hash
 
 ## DB - Schema
-![db-schema](https://github.com/PrarabdhJoshi/ssl-cert/documentation/master/db-schema.png?raw=true)
+![db-schema](https://github.com/PrarabdhJoshi/ssl-cert/documentation/main/db-schema.png?raw=true)
 
 ## Installation
 
@@ -215,7 +215,7 @@ npm run run-app
     
 ##### Example (sending activation notification): 
 
-![webhook](https://github.com/PrarabdhJoshi/ssl-cert/documentation/master/webhook-notification.png?raw=true)
+![webhook](https://github.com/PrarabdhJoshi/ssl-cert/documentation/main/webhook-notification.png?raw=true)
 
     
 
