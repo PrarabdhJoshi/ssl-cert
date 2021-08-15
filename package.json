@@ -1,0 +1,37 @@
+{
+  "name": "user-cert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "run-docker": "cd docker && docker-compose up -d",
+    "run-server": "ts-node-dev --project ./tsconfig.json ./server/app.ts",
+    "run-app": "npm run run-docker && npm run run-server"
+  },
+  "keywords": [],
+  "author": "Prarabdh Joshi",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "2.5.12",
+    "dotenv": "10.0.0",
+    "koa": "2.13.1",
+    "koa-bodyparser": "4.3.0",
+    "koa-router": "10.0.0",
+    "node-fetch": "2.6.1",
+    "openssl-nodejs": "1.0.5",
+    "password-hash": "1.2.2",
+    "pg": "8.7.1",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "8.3.1",
+    "@types/password-hash": "1.2.21",
+    "@types/koa": "2.13.4",
+    "@types/koa-bodyparser": "4.3.3",
+    "@types/koa-router": "7.4.4",
+    "@types/node": "16.4.13",
+    "@types/pg": "8.6.1",
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.3.5"
+  }
+}

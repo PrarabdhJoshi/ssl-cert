@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgresDb: 
+    image: 'postgres:11.4-alpine'
+    container_name: 'postgres_cloudflare'
+    restart: always
+    environment:
+      POSTGRES_USER: prarabdh
+      POSTGRES_PASSWORD: cloudflare
+      POSTGRES_DB: cloudflare
+    ports:
+      - '5433:5432'
+    volumes:
+      - ./postgres/:/docker-entrypoint-initdb.d/
