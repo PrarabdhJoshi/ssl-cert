@@ -220,8 +220,5 @@ npm run run-app
 ##### DB - Schema
 ![db-schema](https://github.com/PrarabdhJoshi/ssl-cert/blob/main/documentation/screenshots/db-schema.png?raw=true)
 
-    
-
-
 
 
