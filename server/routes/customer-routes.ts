@@ -26,9 +26,9 @@ customerRouter.get('/customer', async (ctx: Koa.Context)=>{
 customerRouter.post('/customer', async(ctx: Koa.Context)=>{
     const body = ctx.request.body
     if(!body.name || !body.password || !body.email){
-        ctx.status = 403
+        ctx.status = 400
         ctx.body = {
-            status: 403,
+            status: 400,
             error: 'malformed request. Please provide all name, password and email in the body'
         } 
     }else{

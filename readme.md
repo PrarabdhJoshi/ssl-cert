@@ -60,7 +60,7 @@ npm run run-app
             email: string // required
         }
     - response: {
-        status: [201, 403, 500]
+        status: [201, 400, 500]
         message/error: string
     }
 
@@ -72,11 +72,11 @@ npm run run-app
     {"status":201,"message":"user successfully created with id: 7193f400-7f01-4d40-b30d-f67207860d33"}
     ```</br></br>
     
-##### Example (403): 
+##### Example (400): 
 > </br><b>Request:</b> </br> 
     curl --header "Content-Type: application/json" -d "{}" http://localhost:9008/customer </br></br>
     <b>Response:</b> </br>
-    ```{"status":403,"error":"malformed request. Please provide all name, password and email in the body"}```</br></br>
+    ```{"status":400,"error":"malformed request. Please provide all name, password and email in the body"}```</br></br>
 
 #### <u><b>View customer by id </b> </u>
     - GET: ${baseUrl}/customer/:id
@@ -135,7 +135,7 @@ npm run run-app
             domainName: string // required
         }
     - response: {
-        status: [201, 403, 404, 500],
+        status: [201, 400, 404, 500],
         message/error: string
     }
 ##### Example (201): 
@@ -151,11 +151,11 @@ npm run run-app
     ```{"status":404,"error":"customer with id: undefined does not exist"}```
     </br></br>
 
-##### Example (403): 
+##### Example (400): 
 > </br><b>Request:</b> </br> 
     curl --header "Content-Type: application/json" -d "{\"customerId\":\"non-existent\", \"active\": false}" http://localhost:9008/certificate </br></br>
     Response: </br>
-    ```{"status":403,"error":"malformed request. Please provide customer id, active and domainName field"}```</br></br>
+    ```{"status":400,"error":"malformed request. Please provide customer id, active and domainName field"}```</br></br>
     
 #### <u><b>View Customer's active certificates</b></u>
     - GET: ${baseUrl}/customer/:id/active-certificates
@@ -185,7 +185,7 @@ npm run run-app
     - PATCH: ${baseUrl}/certificate/:certificateId
     - body: { active: boolean }
     - response: {
-        status: [204, 403, 404, 500]
+        status: [204, 400, 404, 500]
         data: object | error: string
     }
     
@@ -205,12 +205,12 @@ npm run run-app
     </b>Response:</b> </br>
     ```{"status":404,"error":"certificate with id: non-existent does not exist"}``` </br></br>
 
-##### Example (403, malformed request): 
+##### Example (400, malformed request): 
 > </br><b>Request:</b> </br>
     curl -X PATCH -H "Content-Type: application/json" \
     -d '{}' \ 
      http://localhost:9008/certificate/non-existent/ </br></br>    <b>Response:</b> </br>
-    ```{"status":403,"error":"malformed request. Please provide active field in the body"}``` </br></br>
+    ```{"status":400,"error":"malformed request. Please provide active field in the body"}``` </br></br>
     
 ##### Example (sending activation notification): 
 
