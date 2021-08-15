@@ -3,13 +3,13 @@
 
 HTTP-based RESTful API for managing Customers and their Certificates.
 
-> # Customer
+> ### Customer
     - Has a name
     - Has an email address
     - Has a password
     - May have zero to many Certificates
     
-> # Certificate
+> ### Certificate
     - Belongs to one and only one Customer
     - Can be either active or inactive 
     - Has a private key
