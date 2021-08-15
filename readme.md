@@ -36,9 +36,6 @@ HTTP-based RESTful API for managing Customers and their Certificates.
 - Docker
 - password-hash
 
-## DB - Schema
-![db-schema](https://github.com/PrarabdhJoshi/ssl-cert/blob/main/documentation/screenshots/db-schema.png?raw=true)
-
 ## Installation
 
 > Caution: Update WEBHOOK_URL in .env to receive activation/deactivation notifications. 
@@ -220,5 +217,6 @@ npm run run-app
     
 
 
-
+## DB - Schema
+![db-schema](https://github.com/PrarabdhJoshi/ssl-cert/blob/main/documentation/screenshots/db-schema.png?raw=true)
 
