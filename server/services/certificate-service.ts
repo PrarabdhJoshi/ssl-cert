@@ -56,7 +56,7 @@ export class CertificateService{
     }
 
     async getActiveCertificates(customerId: string){
-        const query = 'select * from ledger.certificate where customer_id=$1 and active=$2'
+        const query = 'select id, customer_id, cert_body from ledger.certificate where customer_id=$1 and active=$2'
         const result = await this.postgres.query(query, [customerId, true])
         return result.data
     }
