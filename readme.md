@@ -46,7 +46,7 @@ Pre-requisites: [Node.js](https://nodejs.org/) v12+, docker >=20.10.0, npm >= 6.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-cd user-cert
+cd ssl-cert
 npm install
 npm run run-app
 ```
