@@ -180,7 +180,7 @@ npm run run-app
 > </br><b>Request:</b> </br> 
     curl http://localhost:9008/customer/non-existent/active-certificates </br></br>
     <b>Response:</b> </br>
-    ```{"status":404,"error":"customer with id: 5ea2c6f2-f737-4730-8b0d-ff971f2690f does not exist"}``` </br></br>
+    ```{"status":404,"error":"customer with id: non-existent does not exist"}``` </br></br>
     
 #### <u><b>Activate/DeActivate Certificate</b></u>
     - PATCH: ${baseUrl}/certificate/:certificateId
