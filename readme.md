@@ -1,4 +1,3 @@
-# CloudFlare Programming Exercise
 ## Prarabdh Joshi
 
 HTTP-based RESTful API for managing Customers and their Certificates.
